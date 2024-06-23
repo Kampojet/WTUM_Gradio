@@ -48,3 +48,4 @@ gr.Interface(
     title="Dog Emotion Predictor",
     description="Select a model and upload an image to predict the class."
 ).launch(share=True, server_name='0.0.0.0', server_port=7860)
+
