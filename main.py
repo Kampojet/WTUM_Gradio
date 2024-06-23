@@ -24,9 +24,9 @@ def predict_model2(image):
     return f"Your dog is {classes[prediction]}"
 
 def predict_selected_model(image, model_name):
-    if model_name == "Model 1" and image is not None:
+    if model_name == "InceptionV3" and image is not None:
         return predict_model1(image)
-    elif model_name == "Model 2" and image is not None:
+    elif model_name == "ResNet50V2" and image is not None:
         return predict_model2(image)
     elif image is None:
         return "Choose an image"
@@ -35,7 +35,7 @@ def predict_selected_model(image, model_name):
 
 inputs = [
     gr.Image(type="pil", label="Upload an image"),
-    gr.Radio(["Model 1", "Model 2"], label="Select Model", value="Model 1")
+    gr.Radio(["InceptionV3", "ResNet50V2"], label="Select Model", value="Model 1")
 ]
 
 output = gr.Text()
