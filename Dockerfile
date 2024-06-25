@@ -14,10 +14,8 @@ WORKDIR /app
 
 COPY --from=build /app/venv /app/venv
 
-EXPOSE 7860
-
 ENV PATH="/app/venv/bin:$PATH"
 
 COPY . .
 
-CMD ["python", "main.py"]
+CMD ["python", "training.py"]
