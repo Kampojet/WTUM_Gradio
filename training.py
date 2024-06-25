@@ -124,13 +124,13 @@ def training_inception(img_generator_flow_train, img_generator_flow_valid, iftes
 
 
 if __name__ == '__main__':
-    testing = True
+    isTesting = True
     train_data, valid_data = preprocessing('Dog Emotions')
-    model_r = training_resnet(train_data, valid_data, testing)
+    model_r = training_resnet(train_data, valid_data, isTesting)
     plot_metrics(model_r.history, "ResNet50V2")
-    if not testing:
+    if not isTesting:
         model_r.save("ResNet50V2.keras")
-    model_i = training_inception(train_data, valid_data, testing)
+    model_i = training_inception(train_data, valid_data, isTesting)
     plot_metrics(model_i.history, "InceptionV3")
-    if not testing:
+    if not isTesting:
         model_i.save("InceptionV3.keras")
