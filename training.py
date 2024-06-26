@@ -124,7 +124,7 @@ def training_inception(img_generator_flow_train, img_generator_flow_valid, iftes
 
 
 if __name__ == '__main__':
-    IS_TESTING = True
+    IS_TESTING = False
     train_data, valid_data = preprocessing('Dog Emotions')
     model_r = training_resnet(train_data, valid_data, IS_TESTING)
     plot_metrics(model_r.history, "ResNet50V2")
